@@ -29,4 +29,14 @@ fun Profile(modifier: Modifier = Modifier) {
             .background(Color.Black)
             .padding(top = 100.dp),
         horizontalAlignment = Alignment.CenterHorizontally
-    )
+    ){
+        // 🖼️ Foto Profil Bulat
+        Image(
+            painter = painterResource(id = R.drawable.saya),
+            contentDescription = "Foto Profil",
+            modifier = Modifier
+                .size(140.dp)
+                .clip(CircleShape)
+                .border(3.dp, Color.Gray, CircleShape),
+            contentScale = ContentScale.Crop
+        )
