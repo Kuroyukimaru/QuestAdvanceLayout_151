@@ -40,3 +40,35 @@ fun Profile(modifier: Modifier = Modifier) {
                 .border(3.dp, Color.Gray, CircleShape),
             contentScale = ContentScale.Crop
         )
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        // 🌐 Deretan Logo Media Sosial
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(24.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            val icons = listOf(
+                R.drawable.facebook,
+                R.drawable.google,
+                R.drawable.tele,
+                R.drawable.linkedin
+            )
+
+            icons.forEach { icon ->
+                Box(
+                    modifier = Modifier
+                        .size(45.dp)
+                        .clip(CircleShape),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Image(
+                        painter = painterResource(id = icon),
+                        contentDescription = null,
+                        modifier = Modifier.size(35.dp)
+                    )
+                }
+            }
+        }
+
+
