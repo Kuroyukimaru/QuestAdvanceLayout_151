@@ -42,7 +42,7 @@ fun ActivitasPertama(modifier: Modifier = Modifier) {
                 .fillMaxWidth()
                 .padding(all = 12.dp),
             colors = CardDefaults.cardColors(
-                contentColor = Color.DarkGray
+                containerColor = Color.DarkGray
             )
         )
         {
