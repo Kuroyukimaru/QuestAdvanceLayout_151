@@ -71,4 +71,34 @@ fun Profile(modifier: Modifier = Modifier) {
             }
         }
 
+        Column(
+            modifier = Modifier
+                .padding(top = 20.dp)
+                .fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            // 🧍 Nama dan Deskripsi
+            Text(
+                text = stringResource(id = R.string.nama),
+                fontSize = 35.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Text(
+                text = stringResource(id = R.string.email),
+                fontSize = 15.sp,
+                color = Color.White
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Text(
+                text = "Saya Seorang UI/UX Designer",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
 
