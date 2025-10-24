@@ -4,24 +4,41 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.WindowCompat
 import com.example.questadvancelayout_151.ui.theme.QuestAdvanceLayout_151Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        // biar layout bisa tembus ke status bar
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        // ubah status bar jadi hitam dan ikon jadi putih
+        window.statusBarColor = android.graphics.Color.BLACK
+        WindowCompat.getInsetsController(window, window.decorView)
+            ?.isAppearanceLightStatusBars = false
+
         setContent {
             QuestAdvanceLayout_151Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ActivitasPertama(
-                        modifier = Modifier.padding(paddingValues = innerPadding)
+                Scaffold(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Black) // latar belakang full hitam
+                ) { innerPadding ->
+                    Profile(
+                        modifier = Modifier
+                            .padding(innerPadding)
+                            .background(Color.Black)
                     )
                 }
             }
